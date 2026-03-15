@@ -150,84 +150,106 @@ Console.WriteLine("Hello, World!");
 
 
 //Part 02 : Practical (Extending the Movie Ticket Booking System)
-Console.WriteLine("----- Ticket System -----");
-var cinema = new Cinema("Cineplex", "Downtown");
-for (int i = 0; i < 3; i++)
-{
-    Console.WriteLine($"Enter Data for Ticket{i+1}");
+//Console.WriteLine("----- Ticket System -----");
+//var cinema = new Cinema("Cineplex", "Downtown");
+//for (int i = 0; i < 3; i++)
+//{
+//    Console.WriteLine($"Enter Data for Ticket{i+1}");
 
-    Console.WriteLine("Enter movie name:");
-    var movieName = Console.ReadLine().ToString();
-    Console.WriteLine("Enter ticket type (0 = Standard, 1 = VIP, 2 = IMAX):");
-    var typeInput = Console.ReadLine().ToString();
-    var typeVal = int.Parse(typeInput);
-    Console.WriteLine("Enter seat row (A-Z):");
-    var seatRowInput = Console.ReadLine().ToString();
-    var seatRow = Char.Parse(seatRowInput);
-    Console.WriteLine("Enter seat number:");
-    var seatNumberInput = Console.ReadLine().ToString();
-    var seatNumber = int.Parse(seatNumberInput);
-    Console.WriteLine("Enter Price:");
-    var priceInput = Console.ReadLine().ToString();
-    var price = double.Parse(priceInput);
-    Console.WriteLine("Enter Discount Amount:");
-    var discountAmountInput = Console.ReadLine().ToString();
-    var discountAmount = double.Parse(discountAmountInput);
-    var ticket = new Ticket(movieName, price, (type)typeVal, new SeatLocation((char)seatRow, seatNumber));
-    cinema.AddTicket(ticket);
-}
-Console.WriteLine();
-Console.WriteLine();
+//    Console.WriteLine("Enter movie name:");
+//    var movieName = Console.ReadLine().ToString();
+//    Console.WriteLine("Enter ticket type (0 = Standard, 1 = VIP, 2 = IMAX):");
+//    var typeInput = Console.ReadLine().ToString();
+//    var typeVal = int.Parse(typeInput);
+//    Console.WriteLine("Enter seat row (A-Z):");
+//    var seatRowInput = Console.ReadLine().ToString();
+//    var seatRow = Char.Parse(seatRowInput);
+//    Console.WriteLine("Enter seat number:");
+//    var seatNumberInput = Console.ReadLine().ToString();
+//    var seatNumber = int.Parse(seatNumberInput);
+//    Console.WriteLine("Enter Price:");
+//    var priceInput = Console.ReadLine().ToString();
+//    var price = double.Parse(priceInput);
+//    Console.WriteLine("Enter Discount Amount:");
+//    var discountAmountInput = Console.ReadLine().ToString();
+//    var discountAmount = double.Parse(discountAmountInput);
+//    var ticket = new Ticket(movieName, price, (type)typeVal, new SeatLocation((char)seatRow, seatNumber));
+//    cinema.AddTicket(ticket);
+//}
+//Console.WriteLine();
+//Console.WriteLine();
 
-Console.WriteLine("-----All Tickets Info -----");
-int ticketNumber = 1;
-foreach (var ticket in cinema.Tickets)
+//Console.WriteLine("-----All Tickets Info -----");
+//int ticketNumber = 1;
+//foreach (var ticket in cinema.Tickets)
+//{
+//    if (ticket != null)
+//    {
+//        Console.WriteLine($"Ticket #{ticketNumber}: {ticket.MovieName}");
+
+//        Console.WriteLine($"Movie: {ticket.MovieName}");
+//        Console.WriteLine($"Type: {ticket.TicketType}");
+//        Console.WriteLine($"Seat: Row {(char)ticket.SeatLocation.Row}, Number {ticket.SeatLocation.Number}");
+//        Console.WriteLine($"Price: {ticket.Price}");
+//        Console.WriteLine($"Total (14% tax): {ticket.CalcTotal(14)}");
+//        ticketNumber++;
+
+
+//    }
+//}
+//Console.WriteLine();
+//Console.WriteLine();
+//Console.WriteLine("-----Search by Movie -----");
+
+//Console.WriteLine($"Enter Movie Name for Searching:");
+//var searchMovieName = Console.ReadLine().ToString();
+//var searchedTicket = cinema[searchMovieName];
+//if (searchedTicket == null)
+//{
+//    Console.WriteLine("Not Found");
+
+//}
+//else
+//{
+//    Console.WriteLine($"Movie: {searchedTicket.MovieName}");
+//    Console.WriteLine($"Type: {searchedTicket.TicketType}");
+//    Console.WriteLine($"Seat: Row {(char)searchedTicket.SeatLocation.Row}, Number {searchedTicket.SeatLocation.Number}");
+//    Console.WriteLine($"Price: {searchedTicket.Price}");
+
+
+//}
+
+
+//Console.WriteLine("-----Stastics -----");
+//Console.WriteLine($"Total Tickets Sold: {Ticket.GetTotalTicketsSold()}");
+
+//for (int i = 0; i < 2; i++)
+//{
+//    Console.WriteLine($"Booking Reference {i + 1}:{cinema.Tickets[i].TicketId}");
+//}
+
+
+//var groupPrice = BookingHelper.CalcGroupDiscount(5, 80);
+//Console.WriteLine($"Group Price for 5 tickets at 80 each 10% discount: {groupPrice}");
+
+animal d = new dog();
+d.speak();
+
+public class animal
 {
-    if (ticket != null)
+    public virtual void speak()
     {
-        Console.WriteLine($"Ticket #{ticketNumber}: {ticket.MovieName}");
-
-        Console.WriteLine($"Movie: {ticket.MovieName}");
-        Console.WriteLine($"Type: {ticket.TicketType}");
-        Console.WriteLine($"Seat: Row {(char)ticket.SeatLocation.Row}, Number {ticket.SeatLocation.Number}");
-        Console.WriteLine($"Price: {ticket.Price}");
-        Console.WriteLine($"Total (14% tax): {ticket.CalcTotal(14)}");
-        ticketNumber++;
-
-
+        Console.WriteLine("Animal is speak");
     }
 }
-Console.WriteLine();
-Console.WriteLine();
-Console.WriteLine("-----Search by Movie -----");
-
-Console.WriteLine($"Enter Movie Name for Searching:");
-var searchMovieName = Console.ReadLine().ToString();
-var searchedTicket = cinema[searchMovieName];
-if (searchedTicket == null)
+public class dog : animal
 {
-    Console.WriteLine("Not Found");
-
-}
-else
-{
-    Console.WriteLine($"Movie: {searchedTicket.MovieName}");
-    Console.WriteLine($"Type: {searchedTicket.TicketType}");
-    Console.WriteLine($"Seat: Row {(char)searchedTicket.SeatLocation.Row}, Number {searchedTicket.SeatLocation.Number}");
-    Console.WriteLine($"Price: {searchedTicket.Price}");
-
-
+    public new void speak()
+    {
+        Console.WriteLine("Dog is HOW HOW");
+    }
+    
 }
 
 
-Console.WriteLine("-----Stastics -----");
-Console.WriteLine($"Total Tickets Sold: {Ticket.GetTotalTicketsSold()}");
 
-for (int i = 0; i < 2; i++)
-{
-    Console.WriteLine($"Booking Reference {i + 1}:{cinema.Tickets[i].TicketId}");
-}
-
-
-var groupPrice = BookingHelper.CalcGroupDiscount(5, 80);
-Console.WriteLine($"Group Price for 5 tickets at 80 each 10% discount: {groupPrice}");
